@@ -2,11 +2,9 @@ ports:
     - port: 3000
 tasks:
     - init: >
-        export PIPENV_VENV_IN_PROJECT=true;
-        pipenv shell;
-        pipenv install;
+        pip3 install -r requirements.txt;
         export FLASK_APP=src/main.py;
-        export FLASK_ENV=development
+        export FLASK_ENV=development;
       command: >
         pipenv shell;
         flask run -p 3000
